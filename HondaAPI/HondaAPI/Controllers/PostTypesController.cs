@@ -25,12 +25,13 @@ namespace HondaAPI.Controllers
 
         [Route("api/posttypes")]
         [HttpPost]
-        public void CreateNewPost([FromBody] PostType postType)
+        public ActionResult CreateNewPostType([FromBody] PostType postType)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
+                    postType.CreatedDate = DateTime.Now;
                     _context.Add(postType);
                     _context.SaveChangesAsync();
                 }
@@ -42,10 +43,27 @@ namespace HondaAPI.Controllers
                     "Try again, and if the problem persists " +
                     "see your system administrator.");
             }
+            return Ok();
+        }
+
+        [Route("api/posttypes/{id}")]
+        [HttpGet]
+        public PostTypesViewModel GetDetail(int? id)
+        {
+            var postType = _context.PostTypes.Find(id);
+            PostTypesViewModel p = new PostTypesViewModel()
+            {
+                PostTypeId = postType.PostTypeId,
+                PostTypeName = postType.PostTypeName,
+                CreatedDate = postType.CreatedDate,
+                ModifiedDate = postType.ModifiedDate,
+                SortOrder = postType.SortOrder,
+            };
+            return p;
         }
 
         [Route("api/posttypes/posttypeid={id}")]
-        [HttpPut]
+        [HttpPost]
         public async Task<IActionResult> Edit(int? id ,[FromBody] PostType postType)
         {
             try
@@ -63,7 +81,10 @@ namespace HondaAPI.Controllers
                     }
                     else
                     {
+                        postTypeToUpdate.CreatedDate = postType.CreatedDate;
                         postTypeToUpdate.PostTypeName = postType.PostTypeName;
+                        postTypeToUpdate.SortOrder = postType.SortOrder;
+                        postTypeToUpdate.ModifiedDate = DateTime.Now;
                         _context.Entry(postTypeToUpdate).State = EntityState.Modified;
                         await _context.SaveChangesAsync();
                         return new ObjectResult(postTypeToUpdate);

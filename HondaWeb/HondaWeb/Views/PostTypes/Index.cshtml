@@ -1,0 +1,83 @@
+﻿@model IEnumerable<HondaWeb.Models.PostTypesViewModel>
+@{
+
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Quantity++;
+}
+<h2>Loại bài viết</h2>
+<a href="posttypes/create" class="btn btn-warning">Thêm loại bài viết</a>
+<table class="table table-bordered table-hover" style="margin-top:20px; background-color:white; border-radius:10px">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Mã loại bài viết</th>
+            <th>Tên loại bài viết</th>
+            <th>Ngày tạo</th>
+            <th>Ngày chỉnh sửa</th>
+            <th>Thứ tự</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-center">@(ViewBag.Quantity++)</td>
+                <td class="text-center">@Html.DisplayFor(p => item.PostTypeId)</td>
+                <td class="text-center">@Html.DisplayFor(p => item.PostTypeName)</td>
+                <td class="text-right">@Html.DisplayFor(p => item.CreatedDate)</td>
+                @if (item.ModifiedDate == null)
+                {
+                    <td class="text-center">Chưa chỉnh sửa</td>
+                }
+                else
+                {
+                    <td class="text-right">@Html.DisplayFor(p => item.ModifiedDate)</td>
+                }
+                <td class="text-center">@Html.DisplayFor(p => item.SortOrder)</td>
+                <td>
+                    <a href="/PostTypes/Edit/@item.PostTypeId" class="btn btn-info" style="margin-right:10px">Sửa</a>
+                    <a href="/PostTypes/Delete/@item.PostTypeId" id="delete" class="btn btn-danger">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@*@section scripts
+        {
+        <script>
+            $(function () {
+                $("#delete").click(function (event) {
+                    event.preventDefault();
+                    $('<div title="Confirm Box"></div>').dialog({
+                        open: function (event, ui) {
+                            $(this).html("Yes or No question?");
+                        },
+                        close: function () {
+                            $(this).remove();
+                        },
+                        resizable: false,
+                        height: 140,
+                        modal: true,
+                        buttons: {
+                            'Yes': function () {
+                                $(this).dialog('close');
+                                $.post('url/');
+
+                            },
+                            'No': function () {
+                                $(this).dialog('close');
+                                $.post('url/');
+                            }
+                        }
+                    });
+                });
+            });
+            </script>
+    }*@
+
+
+
+

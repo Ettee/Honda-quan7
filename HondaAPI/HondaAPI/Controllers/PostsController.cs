@@ -13,33 +13,59 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HondaAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class PostsController : ControllerBase
     {
         EntityDataContext _context = new EntityDataContext();
+
+        [Route("api/posts")]
         [HttpGet]
         public IEnumerable<PostsViewModel> GetAll()
         {
-            var posts = _context.Posts.Select(p => new PostsViewModel() 
+            var posts = _context.Posts.AsNoTracking().Join(_context.PostTypes, p=>p.PostTypeId, t => t.PostTypeId, (p,t) => new PostsViewModel()
             {
+                PostId = p.PostId,
                 Title = p.Title,
                 Content = p.Content,
                 CreatedDate = p.CreatedDate,
                 ModifiedDate = p.ModifiedDate,
                 Description = p.Description,
-                IsHotNews = p.IsHotNews
+                IsHotNews = p.IsHotNews,
+                PostTypeId = p.PostTypeId,
+                PostTypeName = t.PostTypeName
             }).ToList();
             return posts;
         }
 
+        [Route("api/posts/{id}")]
+        [HttpGet]
+        public PostsViewModel GetDetail(int id)
+        {
+            var post = _context.Posts.Join(_context.PostTypes, p => p.PostTypeId, t => t.PostTypeId, (p, t) => new PostsViewModel()
+            {
+                PostId = p.PostId,
+                Title = p.Title,
+                Content = p.Content,
+                CreatedDate = p.CreatedDate,
+                ModifiedDate = p.ModifiedDate,
+                Description = p.Description,
+                IsHotNews = p.IsHotNews,
+                PostTypeId = p.PostTypeId,
+                PostTypeName = t.PostTypeName
+            }).Where(p=>p.PostId == id).SingleOrDefault();
+            return post;
+        }
+
+        [Route("api/posts")]
         [HttpPost]
-        public void CreateNewPost([FromBody] Post post)
+        public ActionResult CreateNewPost([FromBody] Post post)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
+                    post.CreatedDate = DateTime.Now;
+                    post.Status = 1;
                     _context.Add(post);
                     _context.SaveChangesAsync();
                 }
@@ -51,6 +77,7 @@ namespace HondaAPI.Controllers
                     "Try again, and if the problem persists " +
                     "see your system administrator.");
             }
+            return Ok();
         }
     }
 }

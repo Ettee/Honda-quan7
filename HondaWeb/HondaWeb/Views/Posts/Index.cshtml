@@ -1,0 +1,88 @@
+﻿@model IEnumerable<HondaWeb.Models.PostsViewModel>
+@{
+
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    //ViewBag.Title = "NhanVien";
+    ViewBag.Quantity++;
+}
+<h2>Tin tức</h2>
+<a href="posts/create" class="btn btn-warning">Tạo bài viết</a>
+<table class="table table-bordered table-hover" style="margin-top:20px; background-color:white; border-radius:10px">
+    <thead>
+        <tr>
+            <th class="text-center">STT</th>
+            <th class="text-center">Mã bài viết</th>
+            <th class="text-center">Tiêu đề</th>
+            <th class="text-center">Mô tả</th>
+            <th class="text-center">Ngày đăng</th>
+            <th class="text-center">Ngày chỉnh sửa</th>
+            <th class="text-center">Loại tin tức</th>
+            <th class="text-center">Trạng thái</th>
+            <th class="text-center">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td class="text-center">@(ViewBag.Quantity++)</td>
+            <td class="text-center">@Html.DisplayFor(p => item.PostId)</td>
+            <td class="text-center">@Html.DisplayFor(p => item.Title)</td>
+            <td class="text-center">@Html.DisplayFor(p => item.Description)</td>
+            <td class="text-right">@Html.DisplayFor(p => item.CreatedDate)</td>
+            @if (item.ModifiedDate == null)
+            {
+                <td class="text-center">Chưa chỉnh sửa</td>
+            }
+            else
+            {
+                <td class="text-right">@Html.Raw(item.ModifiedDate)</td>
+            }
+            <td class="text-center">@Html.DisplayFor(p => item.PostTypeName)</td>
+            <td class="text-center">@Html.DisplayFor(p => item.Status)</td>
+            <td>
+                <a href="/Posts/Edit/@item.PostId" class="btn btn-info" style="margin-right:10px">Sửa</a>
+                <a href="/Posts/Delete/@item.PostId" id="delete" class="btn btn-danger">Xóa</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+@*@section scripts
+        {
+        <script>
+            $(function () {
+                $("#delete").click(function (event) {
+                    event.preventDefault();
+                    $('<div title="Confirm Box"></div>').dialog({
+                        open: function (event, ui) {
+                            $(this).html("Yes or No question?");
+                        },
+                        close: function () {
+                            $(this).remove();
+                        },
+                        resizable: false,
+                        height: 140,
+                        modal: true,
+                        buttons: {
+                            'Yes': function () {
+                                $(this).dialog('close');
+                                $.post('url/');
+
+                            },
+                            'No': function () {
+                                $(this).dialog('close');
+                                $.post('url/');
+                            }
+                        }
+                    });
+                });
+            });
+            </script>
+    }*@
+
+
+
+

@@ -9,6 +9,7 @@ D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\HondaWeb.d
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\HondaWeb.pdb
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\HondaWeb.Views.dll
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\HondaWeb.Views.pdb
+D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\dotnet-bundle.dll
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
@@ -25,6 +26,7 @@ D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\Microsoft.
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\NUglify.dll
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
@@ -92,6 +94,11 @@ D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\HondaWeb.R
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Posts\Create.cshtml.g.cs
+D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Posts\Edit.cshtml.g.cs
+D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Posts\Index.cshtml.g.cs
+D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\Razor\Views\PostTypes\Create.cshtml.g.cs
+D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\Razor\Views\PostTypes\Index.cshtml.g.cs
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutAdmin.cshtml.g.cs
@@ -108,7 +115,8 @@ D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\HondaWeb.d
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\HondaWeb.pdb
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\HondaWeb.genruntimeconfig.cache
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\HondaWeb.csprojAssemblyReference.cache
-D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\dotnet-bundle.dll
-D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\NUglify.dll
+D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\HondaWeb.csproj.CoreCompileInputs.cache
 D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\HondaWeb.MvcApplicationPartsAssemblyInfo.cache
+D:\OhMyHotel\working\VS2019\HondaWeb\HondaWeb\obj\Debug\netcoreapp3.1\Razor\Views\PostTypes\Edit.cshtml.g.cs

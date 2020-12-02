@@ -48,7 +48,6 @@ namespace HondaAPI.Models
             modelBuilder.Entity<Post>(entity =>
             {
                 entity.Property(e => e.PostId)
-                    .ValueGeneratedNever()
                     .HasColumnName("PostID");
 
                 entity.Property(e => e.CreatedDate).HasColumnType("datetime");

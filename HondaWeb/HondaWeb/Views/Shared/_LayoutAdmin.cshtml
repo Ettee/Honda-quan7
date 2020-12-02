@@ -24,20 +24,11 @@
     <link href="~/Assets/cssManager/style-responsive.css" rel="stylesheet" />
     <link href="~/Assets/cssManager/style.css" rel="stylesheet" />
 
-    <!-- =======================================================
-      Template Name: Dashio
-      Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-      Author: TemplateMag.com
-      License: https://templatemag.com/license/
-    ======================================================= -->
 </head>
 
 <body>
     <section id="container">
-        <!-- **********************************************************************************************************************************************************
-            TOP BAR CONTENT & NOTIFICATIONS
-            *********************************************************************************************************************************************************** -->
-        <!--header start-->
+
         <header class="header black-bg">
             <div class="sidebar-toggle-box">
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
@@ -54,36 +45,20 @@
                 </ul>
             </div>
         </header>
-        <!--header end-->
-        <!-- **********************************************************************************************************************************************************
-            MAIN SIDEBAR MENU
-            *********************************************************************************************************************************************************** -->
-        <!--sidebar start-->
+
         <aside>
             <div id="sidebar" class="nav-collapse ">
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
-                    <p class="centered"><a href="profile.html"><img src="~/Assets/imagasManager/friends/fr-03.jpg" class="img-circle" width="80"></a></p>
+                    <p class="centered"><a href="profile.html"><img src="~/Assets/imagasManager/friends/fr-01.jpg" class="img-circle" width="80"></a></p>
                     <h5 class="centered">
                         @ViewBag.Name
                     </h5>
-                    @*<li class="mt">
-                            <a class="active" href="index.html">
-                                <i class="fa fa-dashboard"></i>
-                                <span>Cá nhân</span>
-                            </a>
-                        </li>*@
                     <li class="sub-menu">
                         <a href="/khachhang">
                             <i class="fa fa-desktop"></i>
                             <span><b>Khách hàng</b></span>
                         </a>
-                        @*<ul class="sub">
-                                <li><a href="general.html">General</a></li>
-                                <li><a href="buttons.html">Buttons</a></li>
-                                <li><a href="panels.html">Panels</a></li>
-                                <li><a href="font_awesome.html">Font Awesome</a></li>
-                            </ul>*@
                     </li>
                     <li class="sub-menu">
                         <a href="javascript:;">
@@ -96,11 +71,14 @@
                         </ul>
                     </li>
                     <li class="sub-menu">
-                        <a href="/tintuc">
+                        <a href="javascript:;">
                             <i class="fa fa-book"></i>
                             <span><b>Tin tức</b></span>
                         </a>
-                        
+                        <ul class="sub">
+                            <li><a href="/posts">Danh sách tin tức</a></li>
+                            <li><a href="/posttypes">Loại tin tức</a></li>
+                        </ul>
                     </li>
 
                 </ul>
@@ -114,30 +92,10 @@
             <section class="wrapper">
                 <div class="row" style="width:90%; margin: auto">
                     @RenderBody()
-
-                    <!-- /row -->
-                    <!-- /row -->
                 </div>
-                </div>
-                <!-- /row -->
             </section>
         </section>
-        <!--main content end-->
-        @*<footer class="site-footer" style="position:fixed">
-                <div class="text-center">
-                    <p>
-                        &copy; Copyrights <strong>SUPERXE</strong>. All Rights Reserved
-                    </p>
-                    <div class="credits">
 
-                        Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
-                    </div>
-                    <a href="index.html#" class="go-top">
-                        <i class="fa fa-angle-up"></i>
-                    </a>
-                </div>
-            </footer>*@
-        <!--footer end-->
     </section>
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="~/Assets/libManager/jquery/jquery.min.js"></script>
@@ -151,9 +109,9 @@
     <script type="text/javascript" src="~/Assets/libManager/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="~/Assets/libManager/gritter-conf.js"></script>
     @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
-    <script src="~"></script>
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
 
-    <script type="text/javascript">
+    @*<script type="text/javascript">
         $(document).ready(function () {
             var unique_id = $.gritter.add({
                 // (string | mandatory) the heading of the notification
@@ -172,7 +130,7 @@
 
             return false;
         });
-    </script>
+    </script>*@
     <script type="application/javascript">
         $(document).ready(function() {
           $("#date-popover").popover({
